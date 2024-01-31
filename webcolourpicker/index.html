@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Colour Picker</title>
+        <style>
+            .wrapper {
+                display: flex;
+            }
+            .row {
+                flex-direction: row;
+                margin-left: 0.5%;
+                margin-right: 0.5%;
+            }
+            .col {
+                flex-direction: column;
+            }
+            .header {
+                color: rgba(255, 176, 0, 0.1);
+                animation-name: FADEIN;
+                animation-duration: 800ms;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+            }
+            .textbox {
+                color: #FFCC00;
+                font-family: UnnamedDOSFontIV;
+                background-color: rgba(204, 139, 0, 0.5);
+                text-align: center;
+                border: 1px solid #FFB000;
+                padding: 2px;
+            }
+            body {
+                background-color: #282828;
+            }
+            p {
+                color: #FFCC00;
+                font-family: UnnamedDOSFontIV;
+            }
+            input {
+                color: #FFCC00;
+                font-family: UnnamedDOSFontIV;
+                background-color: rgba(204, 139, 0, 0.5);
+                text-align: center;
+            }
+            h1 {
+                color: #FFB000;
+                font-family: UnnamedDOSFontIV;
+            }
+            h2 {
+                color: #FFB000;
+                font-family: UnnamedDOSFontIV;
+            }
+            @keyframes FADEIN {
+                10% {color: rgba(255, 176, 0, 0.1);}
+                20% {color: rgba(255, 176, 0, 0.2);}
+                30% {color: rgba(255, 176, 0, 0.3);}
+                40% {color: rgba(255, 176, 0, 0.4);}
+                50% {color: rgba(255, 176, 0, 0.5);}
+                60% {color: rgba(255, 176, 0, 0.6);}
+                70% {color: rgba(255, 176, 0, 0.7);}
+                80% {color: rgba(255, 176, 0, 0.8);}
+                90% {color: rgba(255, 176, 0, 0.9);}
+                100% {color: rgba(255, 176, 0, 1);}
+            }
+            @font-face {
+                font-family: 'UnnamedDOSFontIV';
+                src: url('data:font/woff2;charset=utf-8;base64,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') format('woff2'),
+                    url('data:font/woff;charset=utf-8;base64,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') format('woff');
+                font-weight: 500;
+                font-style: normal;
+                font-display: swap;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper col" style="margin-left: 5%; margin-right: 5%; border-left: 2px dashed #FFB000; border-right: 2px dashed #FFB000; background-color: rgba(204, 139, 0, 0.5)">
+            <div style="border-top: 2px dashed #FFB000;">
+                <h1 style="text-align: center;" class="header">== Colour Picker ==</h1>
+            </div>
+            <div style="border-top: 2px dashed #FFB000;">
+                <div id="colourpickerdiv" style="padding: 10%; border: 2px solid #FFB000;">&nbsp</div>
+                
+                <div class="wrapper">
+                    <div class="row" style="padding-right: 1%; padding-left: 1%;">
+                        <p>Select colour</p>
+                    </div>
+                    <div class="row" style="padding-right: 1%; ">
+                        <p> <input type="color" id="colourpicker" value="#ffffff"> </p>
+                    </div>
+                    <div class="row" style="padding-right: 1%; ">
+                        <p> <input id="colourpickertextbox" value="#ffffff" size="7" maxlength="7"> </p>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper col" style="border-top: 2px dashed #FFB000; border-bottom: 2px dashed #FFB000; padding-left: 1%;">
+                <div class="wrapper">
+                    <h2>Hex Colour</h2>
+                </div>
+                <div class="wrapper">
+                    <div class="row">
+                        <p>Hex:&nbsp</p>
+                    </div> 
+                    
+                    <div class="row">
+                        <p id="hextextarea" class="textbox"></p>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="row">
+                        <p id="hex1" class="textbox"></p>
+                    </div>
+                    <div class="row">
+                        <p id="hex2" class="textbox"></p>
+                    </div>
+                    <div class="row">
+                        <p id="hex3" class="textbox"></p>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <h2>RGB Colour</h2>
+                </div>
+                <div class="wrapper">
+                    <div class="row">
+                        <p>Red:&nbsp</p>
+                    </div>
+                    <div class="row">
+                        <p id="intr" class="textbox"></p>
+                    </div>
+                    <div class="row">
+                        <p>Green:&nbsp</p>
+                    </div>
+                    <div class="row">
+                        <p id="intg" class="textbox"></p>
+                    </div>
+                    <div class="row">
+                        <p>Blue:&nbsp</p>
+                    </div>
+                    <div class="row">
+                        <p id="intb" class="textbox"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        //variable setup
+            const hextextbox = document.querySelector("#hextextarea");
+            const colourpickerdiv = document.querySelector("#colourpickerdiv");
+            const colourpicker = document.querySelector("#colourpicker");
+            const colourpickertextbox = document.querySelector("#colourpickertextbox");
+
+            const hex1text = document.querySelector("#hex1");
+            const hex2text = document.querySelector("#hex2");
+            const hex3text = document.querySelector("#hex3");
+
+            const intrtext = document.querySelector("#intr");
+            const intbtext = document.querySelector("#intb");
+            const intgtext = document.querySelector("#intg");
+        //variables for values
+            //hex
+            let hexc = 0;
+            let hex1 = 0;
+            let hex2 = 0;
+            let hex3 = 0;
+            //rgb
+            let redint = 0;
+            let blueint = 0;
+            let greenint = 0;
+        //watch for events
+            //colour picker input
+            colourpicker.addEventListener("change", watchcolourpicker, false);
+            colourpicker.addEventListener("input", watchcolourpicker, false);
+            
+            //textbox input
+            colourpickertextbox.addEventListener("change", watchcolourpickertextbox, false);
+            colourpickertextbox.addEventListener("input", watchcolourpickertextbox, false);
+        //event functions
+            //colour picker 
+            function watchcolourpicker(event) {
+                hexc = event.target.value;
+                colourpickerdiv.style.background = event.target.value;
+                colourpickertextbox.value = event.target.value;
+                splithex();
+                convertrgb();
+                updatetextboxes()
+            }
+            //colour pick textbox
+            function watchcolourpickertextbox(event) {
+                hexc = event.target.value;
+                colourpickerdiv.style.background = event.target.value;
+                colourpicker.value = event.target.value;
+                splithex();
+                convertrgb();
+                updatetextboxes()
+            }
+
+        //function for updating on page load
+            function pageloadcolourpicker() {
+                hexc = document.querySelector("#colourpicker").value;
+                colourpickerdiv.style.background = document.querySelector("#colourpicker").value;
+                splithex();
+                convertrgb();
+                updatetextboxes()
+            }
+        //function to update textboxes
+        function updatetextboxes() {
+            //hex
+                hextextbox.innerHTML = hexc;
+                hex1text.innerHTML = hex1
+                hex2text.innerHTML = hex2;
+                hex3text.innerHTML = hex3;
+            //rgb
+                intrtext.innerHTML = redint;
+                intbtext.innerHTML = blueint;
+                intgtext.innerHTML = greenint;
+        }
+        pageloadcolourpicker();
+
+        //functions for converting to rgb
+            //split hex code into 3     
+            function splithex() {
+                let hex = String(hexc);
+                hex1 = hex[1] + hex[2];
+                hex2 = hex[3] + hex[4];
+                hex3 = hex[5] + hex[6];
+            }
+            //convert hex to int RGB
+            function convertrgb() {
+                redint = parseInt(hex1, 16);
+                blueint = parseInt(hex3, 16);
+                greenint = parseInt(hex2, 16);
+            }
+    </script>
+</html>
