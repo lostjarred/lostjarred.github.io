@@ -23,18 +23,23 @@ ul.menu {
 }
 h1 {
     text-align: center;
+    font-family: UnnamedDOSFontIV;
 }
 h2 {
     text-align: center;
+    font-family: UnnamedDOSFontIV;
 }
 h3 {
     text-align: center;
+    font-family: UnnamedDOSFontIV;
 }
 li {
     text-align: center;
+    font-family: UnnamedDOSFontIV;
 }
 a {
     text-decoration: none;
+    font-family: UnnamedDOSFontIV;
 }
 a:hover::before {
     content: ">  ";
