@@ -13,7 +13,7 @@
     border-top: double;
     border-bottom: double;
 }
-.border.borderbottom {
+.border.border-bottom {
     border-top: 0px; 
     border-left: 0px; 
     border-right: 0px;
