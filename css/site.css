@@ -47,3 +47,7 @@ a:hover::before {
 a:hover::after {
     content: "  <";
 }
+#main {
+    margin-left: 20%; 
+    margin-right: 20%;
+}
