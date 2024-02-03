@@ -3,15 +3,14 @@
     <head>
         <title>Colour Picker</title>
         <style>
-            .wrapper {
-                display: flex;
-            }
             .row {
+                display: flex;
                 flex-direction: row;
                 margin-left: 0.5%;
                 margin-right: 0.5%;
             }
             .col {
+                display: flex;
                 flex-direction: column;
             }
             .header {
@@ -28,6 +27,24 @@
                 text-align: center;
                 border: 1px solid #FFB000;
                 padding: 2px;
+            }
+            .border-top {
+                border-top: 2px dashed #FFB000;
+            }
+            .border-bottom {
+                border-bottom: 2px dashed #FFB000;
+            }
+            #maindiv{
+                margin-left: 5%; 
+                margin-right: 5%; 
+                border-left: 2px dashed #FFB000; 
+                border-right: 2px dashed #FFB000; 
+                background-color: rgba(204, 139, 0, 0.5)
+            }
+            #colourpickerdiv{
+                padding: 8%; 
+                border: 2px solid #FFB000; 
+                margin: 2%;
             }
             body {
                 background-color: #282828;
@@ -73,69 +90,55 @@
         </style>
     </head>
     <body>
-        <div class="wrapper col" style="margin-left: 5%; margin-right: 5%; border-left: 2px dashed #FFB000; border-right: 2px dashed #FFB000; background-color: rgba(204, 139, 0, 0.5)">
-            <div style="border-top: 2px dashed #FFB000;">
+        <div id="maindiv" class="col">
+            <div class="border-top">
                 <h1 style="text-align: center;" class="header">== Colour Picker ==</h1>
             </div>
-            <div style="border-top: 2px dashed #FFB000;">
-                <div id="colourpickerdiv" style="padding: 10%; border: 2px solid #FFB000;">&nbsp</div>
-                
-                <div class="wrapper">
+            <div class="col border-top">
+                <div id="colourpickerdiv">
+                    &nbsp
+                </div>
+                <div class ="row">   
                     <div class="row" style="padding-right: 1%; padding-left: 1%;">
-                        <p>Select colour</p>
+                        <p>Select colour</p>   
                     </div>
                     <div class="row" style="padding-right: 1%; ">
                         <p> <input type="color" id="colourpicker" value="#ffffff"> </p>
                     </div>
                     <div class="row" style="padding-right: 1%; ">
+                        <p>Hex Colour Code</p>
                         <p> <input id="colourpickertextbox" value="#ffffff" size="7" maxlength="7"> </p>
                     </div>
-                </div>
+                </div> 
             </div>
-            <div class="wrapper col" style="border-top: 2px dashed #FFB000; border-bottom: 2px dashed #FFB000; padding-left: 1%;">
-                <div class="wrapper">
+            <div class="col border-top border-bottom" style="padding-left: 1%;">
+                <div class="col">
                     <h2>Hex Colour</h2>
-                </div>
-                <div class="wrapper">
                     <div class="row">
                         <p>Hex:&nbsp</p>
-                    </div> 
-                    
-                    <div class="row">
                         <p id="hextextarea" class="textbox"></p>
-                    </div>
-                </div>
-                <div class="wrapper">
+                    </div> 
                     <div class="row">
-                        <p id="hex1" class="textbox"></p>
-                    </div>
-                    <div class="row">
-                        <p id="hex2" class="textbox"></p>
-                    </div>
-                    <div class="row">
+                        <p>Hex Red</p>
+                        <p id="hexred" class="textbox"></p>
+                        <p>&nbsp</p>
+                        <p>Hex Green</p>
+                        <p id="hexgreen" class="textbox"></p>
+                        <p>&nbsp</p>
+                        <p>Hex Blue</p>
                         <p id="hex3" class="textbox"></p>
                     </div>
                 </div>
-                <div class="wrapper">
+                <div class="col">
                     <h2>RGB Colour</h2>
-                </div>
-                <div class="wrapper">
                     <div class="row">
                         <p>Red:&nbsp</p>
-                    </div>
-                    <div class="row">
                         <p id="intr" class="textbox"></p>
-                    </div>
-                    <div class="row">
+                        <p>&nbsp</p>
                         <p>Green:&nbsp</p>
-                    </div>
-                    <div class="row">
                         <p id="intg" class="textbox"></p>
-                    </div>
-                    <div class="row">
+                        <p>&nbsp</p>
                         <p>Blue:&nbsp</p>
-                    </div>
-                    <div class="row">
                         <p id="intb" class="textbox"></p>
                     </div>
                 </div>
@@ -149,9 +152,9 @@
             const colourpicker = document.querySelector("#colourpicker");
             const colourpickertextbox = document.querySelector("#colourpickertextbox");
 
-            const hex1text = document.querySelector("#hex1");
-            const hex2text = document.querySelector("#hex2");
-            const hex3text = document.querySelector("#hex3");
+            const hexredtext = document.querySelector("#hexred");
+            const hexgreentext = document.querySelector("#hexgreen");
+            const hexblue = document.querySelector("#hex3");
 
             const intrtext = document.querySelector("#intr");
             const intbtext = document.querySelector("#intb");
@@ -159,8 +162,8 @@
         //variables for values
             //hex
             let hexc = 0;
-            let hex1 = 0;
-            let hex2 = 0;
+            let hexred = 0;
+            let hexgreen = 0;
             let hex3 = 0;
             //rgb
             let redint = 0;
@@ -206,9 +209,9 @@
         function updatetextboxes() {
             //hex
                 hextextbox.innerHTML = hexc;
-                hex1text.innerHTML = hex1
-                hex2text.innerHTML = hex2;
-                hex3text.innerHTML = hex3;
+                hexredtext.innerHTML = hexred
+                hexgreentext.innerHTML = hexgreen;
+                hexblue.innerHTML = hex3;
             //rgb
                 intrtext.innerHTML = redint;
                 intbtext.innerHTML = blueint;
@@ -220,15 +223,15 @@
             //split hex code into 3     
             function splithex() {
                 let hex = String(hexc);
-                hex1 = hex[1] + hex[2];
-                hex2 = hex[3] + hex[4];
+                hexred = hex[1] + hex[2];
+                hexgreen = hex[3] + hex[4];
                 hex3 = hex[5] + hex[6];
             }
             //convert hex to int RGB
             function convertrgb() {
-                redint = parseInt(hex1, 16);
+                redint = parseInt(hexred, 16);
                 blueint = parseInt(hex3, 16);
-                greenint = parseInt(hex2, 16);
+                greenint = parseInt(hexgreen, 16);
             }
     </script>
 </html>
