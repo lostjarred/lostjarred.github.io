@@ -1,6 +1,9 @@
 .border {
     border-color: #FFB000;
 }
+.img-box { 
+    border-color: #FFB000;
+}
 body {
     background-color: #282828;
 }
