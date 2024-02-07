@@ -21,6 +21,9 @@
     border-left: 0px; 
     border-right: 0px;
 }
+.img-box {
+    border: 2px solid black;
+}
 ul.menu {
     list-style: none;
 }
