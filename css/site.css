@@ -55,10 +55,10 @@ a {
     text-decoration: none;
     font-family: UnnamedDOSFontIV;
 }
-a:hover::before {
+a.link:hover::before {
     content: ">  ";
 }
-a:hover::after {
+a.link:hover::after {
     content: "  <";
 }
 #main {
