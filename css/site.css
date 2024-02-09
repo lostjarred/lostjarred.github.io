@@ -61,6 +61,9 @@ a.link:hover::before {
 a.link:hover::after {
     content: "  <";
 }
+h4.border.border.border-bottom {
+    border-bottom: 1px solid;
+}
 #main {
     margin-left: 15%; 
     margin-right: 15%;
