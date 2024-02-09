@@ -1,4 +1,4 @@
 @font-face {
     font-family: UnnamedDOSFontIV;
-    src: url("/fonts/UnnamedDOSFontIV.ttf");
+    src: url("/fonts/UnnamedDOSFontIV.ttf") format("truetype");
 }
