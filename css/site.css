@@ -21,8 +21,15 @@
     border-left: 0px; 
     border-right: 0px;
 }
-.img-box {
+div.img-box {
     border: 3px solid black;
+    width: 25%; 
+    height: 25%;
+}
+img.img-box {
+    object-fit: cover; 
+    height: 100%; 
+    width: 100%;
 }
 ul.menu {
     list-style: none;
