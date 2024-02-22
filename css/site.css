@@ -62,10 +62,10 @@ a {
     text-decoration: none;
     font-family: UnnamedDOSFontIV;
 }
-a.link:hover::before {
+a.link:hover::before, a.link:active::before{
     content: ">  ";
 }
-a.link:hover::after {
+a.link:hover::after, a.link:active::after {
     content: "  <";
 }
 h4.border.border.border-bottom {
