@@ -1,29 +1,11 @@
-.border {
-    border-color: #FFB000;
-}
-div.img-box { 
+.border, div.img-box{
     border-color: #FFB000;
 }
 body {
     background-color: #282828;
 }
-h1 {
+h1, h2, h3, h4, p, a {
      color: #FFCC00;
-}
-h2 {
-    color: #FFCC00;
-}
-h3 {
-    color: #FFCC00;
-}
-h4 {
-    color: #FFCC00;
-}
-p {
-    color: #FFCC00;
-}
-a {
-    color: #FFCC00;
 }
 a:hover,  a:active{
     color: #eeff00;
