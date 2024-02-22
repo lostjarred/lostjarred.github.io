@@ -27,7 +27,7 @@ div.img-box {
     height: 100%;
 }
 img.img-box {
-    object-fit: cover; 
+    object-fit: fill; 
     height: 100%; 
     width: 100%;
 }
@@ -80,5 +80,8 @@ h4.border.border.border-bottom {
         border: 3px solid black;
         width: 25%; 
         height: 25%;
+    }
+    img.img-box {
+        object-fit: contain; 
     }
 }
