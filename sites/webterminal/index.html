@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Terminal Colours</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <style>
+            .col {
+                display: flex;
+                flex-direction: column;
+                margin: 1%;
+            }
+            .row {
+                display: flex;
+                flex-direction: row;
+                margin: 1%;
+            }
+            #main {
+                border: 2px dashed #FFFFFF;
+                background-color: rgb(107, 107, 107);
+            }
+            .border-botttom {
+                border-bottom: 2px dashed #FFFFFF;
+            }
+            h1, h2, h3 {
+                color: #FFFFFF;
+            }
+            @media screen and (min-width: 900px) {
+                #main {
+                    margin-left: 10%; 
+                    margin-right: 10%;
+                }
+            }
+            ul {
+                list-style:none;
+            }
+            body {
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="col" id="main">
+            <div class="col border-botttom">
+                <h1>Terminal Colours</h1>
+            </div>
+            <div class="col border-botttom">
+                 <h2>Background</h2>
+                 <ul>
+                    <li>
+                        <span style="color: #282828"> 
+                            Background Colour
+                            <ul> 
+                                <li>: RGB -- 40, 40, 40</li> 
+                                <li>: HEX -- #282828</li>
+                            </ul> 
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col" style="background-color: #282828; margin: 0%;">
+                <h2 style="margin: 1%;">Foreground</h2>
+                <div class="col">
+                    <h3>Ambers</h3>
+                    <ul>
+                        <li> 
+                            <span style="color: #FFB000"> 
+                                Amber Colour 
+                                <ul>
+                                    <li>: RGB -- 255, 176, 0</li> 
+                                    <li>: HEX -- #FFB000</li>
+                                </ul>
+                            </span> 
+                        </li>
+                        <li>
+                            <span style="color: #FFCC00"> 
+                                Light Amber Colour
+                                <ul>
+                                    <li>: RGB -- 255, 204, 0 </li>
+                                    <li>: HEX -- #FFCC00</li>
+                                </ul>
+                            </span>
+                        </li>
+                    <ul>
+                </div>
+                <div class="col">
+                    <h3>Greens</h3>
+                    <ul>
+                        <li>
+                            <span style="color: #33FF00"> 
+                                Green 1 Colour
+                                <ul>
+                                    <li>: RGB -- 51, 255, 0</li> 
+                                    <li>: HEX -- #33FF00</li> 
+                                </ul>
+                            </span>
+                        </li>
+                        <li>
+                            <span style="color: #33FF33"> 
+                                Green 2 Colour
+                                <ul>
+                                    <li>: RGB -- 51, 255, 51</li> 
+                                    <li>: HEX -- #33FF33</li> 
+                                </ul>
+                            </span>
+                        </li>
+                        <li>
+                            <span style="color: #00FF66"> 
+                                Green 3 Colour
+                                <ul>
+                                    <li>: RGB -- 0, 255, 102</li> 
+                                    <li>: HEX -- #00FF66</li>
+                                </ul> 
+                            </span>
+                        </li>
+                        <li>
+                            <span style="color: #00FF33"> 
+                                Apple II Colour
+                                <ul>
+                                    <li>: RGB -- 0, 255, 51</li> 
+                                    <li>: HEX -- #00FF33</li>
+                                </ul> 
+                            </span>
+                        </li>
+                        <li>
+                            <span style="color: #66FF66"> 
+                                Apple IIc Colour
+                                <ul>
+                                    <li>: RGB -- 102, 255, 102</li> 
+                                    <li>: HEX -- #66FF66</li>
+                                </ul> 
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3>Orange</h3>
+                    <ul>
+                        <li>
+                            <span style="color: #b16818"> 
+                                Orange 1 Colour
+                                <ul>
+                                    <li>: RGB -- 177, 104, 24 </li>
+                                    <li>: HEX -- #b16818 </li>
+                                </ul>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3>White</h3>
+                    <ul>
+                        <li> 
+                            <span style="color: #FFFFFF"> 
+                                White 1 Colour
+                                <ul>
+                                    <li>: RGB -- 255, 255, 255</li> 
+                                    <li>: HEX -- #FFFFFF</li>
+                                </ul>
+                            </span> 
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
