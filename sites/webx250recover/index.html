@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>X250 Recovery Error</title>
+        <style>
+            .col {
+                display: flex;
+                flex-direction: column;
+                margin: 1%;
+            }
+            .row {
+                display: flex;
+                flex-direction: row;
+                margin: 1%;
+            }
+            .headerborder {
+                border-top: 2px dashed #FFB000; 
+                border-bottom: 2px dashed #FFB000;
+            }
+            #maindiv {
+                border: 2px solid #FFB000;
+                border-top: 2px dashed #FFB000;
+                border-bottom: 2px dashed #FFB000;
+            }
+            img {
+                border: 2px solid #FFB000; 
+                width: 100%; 
+                height: 100%; 
+                object-fit: contain;
+            }
+            h1, h2, h3, h4, p, a, li {
+                color: #FFCC00;
+            }
+            body {
+                background-color: #282828;
+            }
+        </style>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    </head>
+    <body>
+        <div id="maindiv" class="col">
+            <div class="col">
+                <h1>Thinkpad X250 Recovery Error</h1>
+            </div>
+            <div class="col">
+                <div class="headerborder">
+                    <h2>Quick Overview</h2>
+                </div>
+                <ol>
+                    <li>Bios - CSM off, UEFI on, Secure Boot Enabled</li>
+                    <li>Get tool 'state.exe' from winre.wim on recovery media, use 7-Zip to explore .wim file, Path: winRE.wim\sources\recovery\tools\state.exe</li>
+                    <li>Erase Hard Drive, within Windows PE(Example windows 8 installer), Command prompt - diskpart - sel dis 0 - clean</li>
+                    <li>run 'state.exe' from command prompt inside Windows PE with these parameters, state.exe /loca=62,128 /disk=0 /w 1</li>
+                    <li>check if succesfull, state.exe /loca=62,128 /disk=0 /t</li>
+                    <li>Restart and attempt restore again</li>
+                </ol>
+            </div>
+            <div class="col">
+                <div class="headerborder">
+                    <h2>Original Reddit Post</h2>
+                </div>
+                <p>From: <a href="https://www.reddit.com/r/thinkpad/comments/153xm1f/thinkpad_x250_recovery_error_possible_fixes/?rdt=52779">https://www.reddit.com/r/thinkpad/comments/153xm1f/thinkpad_x250_recovery_error_possible_fixes/?rdt=52779</a></p>
+                <p>
+                    I know this problem. It is quite frankly really stupid: If these are the "create recovery media"-discs (created using the software from the preinstalled OS) and not the full set from lenovo, they can not restore to a blank hard drive where the recovery partition is not already intact...<br> The hard drive needs to be "tagged", to allow the restore utility to work.<br>
+
+                    First things first: For Windows 8.1 your BIOS should have CSM off, UEFI on and secure boot enabled.<br>
+
+                        obtain the tool "state.exe". It should be within the winre.wim file on your recovery media. (use 7-Zip to explore the .wim-file). winRE.wim\sources\recovery\tools\state.exe<br>
+
+                        Completely clean/erase the hard drive from within Windows PE (diskpart - sel dis 0 - clean)<br>
+
+                        Run the program "state.exe" from within Windows PE with the following parameters:<br>
+
+                    state.exe /loca=62,128 /disk=0 /w 1<br>
+
+                    4. Check if this was successful:<br>
+
+                    state.exe /loca=62,128 /disk=0 /t<br>
+
+                    Restart the computer and try the restore process again. I hope this helps!
+                </p>
+                <div class="col" style="width: 30%;">
+                    <img src="./img/RedditCapture.JPG">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
