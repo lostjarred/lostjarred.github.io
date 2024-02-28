@@ -21,6 +21,10 @@
     border-left: 0px; 
     border-right: 0px;
 }
+.border.border-topbottom { 
+    border-left: 0px; 
+    border-right: 0px;
+}
 div.img-box {
     border: 1px solid black;
     width: 100%; 
