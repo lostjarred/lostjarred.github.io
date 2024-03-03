@@ -6,7 +6,6 @@
             .row {
                 display: flex;
                 flex-direction: row;
-                margin-left: 1%;
             }
             .col {
                 display: flex;
@@ -43,7 +42,7 @@
             body {
                 background-color: #282828;
             }
-            p, h1, h2 {
+            p, h1, h2, h3 {
                 color: #FFCC00;
                 font-family: UnnamedDOSFontIV;
             }
@@ -72,6 +71,9 @@
                 #colourpickerdiv{
                     margin: 2%;
                 }
+                .row {
+                    margin-left: 1%;
+                }
             }
         </style>
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -85,16 +87,32 @@
                 <div id="colourpickerdiv">
                     &nbsp
                 </div>
-                <div class ="row">   
+                <div class ="col">   
                     <div class="row">
-                        <p>Select colour</p>   
-                    </div>
-                    <div class="row">
+                        <p>Select colour : </p>
                         <p> <input type="color" id="colourpicker" value="#ffffff"> </p>
                     </div>
                     <div class="row">
-                        <p>Hex Colour Code</p>
+                        <p>Hex Colour Code : </p>
                         <p> <input id="colourpickertextbox" value="#ffffff" size="7" maxlength="7"> </p>
+                    </div>
+                    <div class="row">
+                        <p>RGB</p>
+                        <div class="row">
+                            <p>Red:</p>
+                            <input type="number" id="rgbinputred" max="255" min="0" value="0" size="5">
+                        </div>
+                        <div class="row">
+                            <p>Green:</p>
+                            <input type="number" id="rgbinputgreen" max="255" min="0" value="0" size="5">
+                        </div>
+                        <div class="row">
+                            <p>Blue:</p>
+                            <input type="number" id="rgbinputblue" max="255" min="0" value="0" size="5">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p id="colpickoutput">VALID COLOUR</p>
                     </div>
                 </div> 
             </div>
@@ -109,13 +127,19 @@
                     </div> 
                     <div class="row">
                         <p>Hex Red: </p>
-                        <p id="hexred" class="textbox"></p>
+                        <p id="hexredtb" class="textbox"></p>
                         <p>&nbsp</p>
                         <p>Hex Green: </p>
-                        <p id="hexgreen" class="textbox"></p>
+                        <p id="hexgreentb" class="textbox"></p>
                         <p>&nbsp</p>
                         <p>Hex Blue: </p>
-                        <p id="hex3" class="textbox"></p>
+                        <p id="hexbluetb" class="textbox"></p>
+                    </div>
+                    <div class="row">
+                        <h3>CSS</h3>
+                    </div>
+                    <div class="row">
+                        <p id="hexcssoutput" class="textbox"></p>
                     </div>
                 </div>
                 <div class="col">
@@ -132,6 +156,15 @@
                         <p>Blue:&nbsp</p>
                         <p id="intb" class="textbox"></p>
                     </div>
+                    <div class="row">
+                        <h3>CSS</h3>
+                    </div>
+                    <div class="row">
+                        <p id="rgbcssoutput" class="textbox"></p>
+                    </div>
+                    <div class="row">
+                        <p id="rgbacssoutput" class="textbox"></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -142,87 +175,169 @@
             const colourpickerdiv = document.querySelector("#colourpickerdiv");
             const colourpicker = document.querySelector("#colourpicker");
             const colourpickertextbox = document.querySelector("#colourpickertextbox");
-
-            const hexredtext = document.querySelector("#hexred");
-            const hexgreentext = document.querySelector("#hexgreen");
-            const hexblue = document.querySelector("#hex3");
-
-            const intrtext = document.querySelector("#intr");
-            const intbtext = document.querySelector("#intb");
-            const intgtext = document.querySelector("#intg");
+            const colourpickerinfooutput = document.querySelector("#colpickoutput");
+            
+            //css outputs
+                const csstextbox = {
+                    hex: document.querySelector("#hexcssoutput"),
+                    rgb: document.querySelector("#rgbcssoutput"),
+                    rgba: document.querySelector("#rgbacssoutput")
+                }
+            //RGB input 
+                const inputrgb = {
+                    red:document.querySelector("#rgbinputred"),
+                    green:document.querySelector("#rgbinputgreen"),
+                    blue:document.querySelector("#rgbinputblue")
+                };
+            //hex text box elements
+                const hextb = {
+                    red:document.querySelector("#hexredtb"), 
+                    blue:document.querySelector("#hexbluetb"), 
+                    green:document.querySelector("#hexgreentb")
+                };
+            //rgb tex box elements
+                const rgbtb = {
+                    red:document.querySelector("#intr"),
+                    blue:document.querySelector("#intb"),
+                    green:document.querySelector("#intg")
+                }
         //variables for values
             //hex
-            let hexc = 0;
-            let hexred = 0;
-            let hexgreen = 0;
-            let hex3 = 0;
+            const hexcolour = {colour:'0', red:'0', green:'0', blue:'0'}
             //rgb
-            let redint = 0;
-            let blueint = 0;
-            let greenint = 0;
+            const rgbint = {red:'0', blue:'0', green:'0'}
         //watch for events
             //colour picker input
-            colourpicker.addEventListener("change", watchcolourpicker, false);
-            colourpicker.addEventListener("input", watchcolourpicker, false);
+                colourpicker.addEventListener("change", watchcolourpicker, false);
+                colourpicker.addEventListener("input", watchcolourpicker, false);
             
             //textbox input
-            colourpickertextbox.addEventListener("change", watchcolourpickertextbox, false);
-            colourpickertextbox.addEventListener("input", watchcolourpickertextbox, false);
+                colourpickertextbox.addEventListener("change", watchcolourpickertextbox, false);
+                colourpickertextbox.addEventListener("input", watchcolourpickertextbox, false);
+            
+            //rgb input 
+                inputrgb.red.addEventListener("change", watchrgbinputs, false);
+                inputrgb.blue.addEventListener("change", watchrgbinputs, false);
+                inputrgb.green.addEventListener("change", watchrgbinputs, false);
+
         //event functions
+            
             //colour picker 
-            function watchcolourpicker(event) {
-                hexc = event.target.value;
-                colourpickerdiv.style.background = event.target.value;
-                colourpickertextbox.value = event.target.value;
-                splithex();
-                convertrgb();
-                updatetextboxes()
-            }
+                function watchcolourpicker(event) {
+                    hexcolour.colour = event.target.value;
+                    colourpickermain();
+                }
             //colour pick textbox
-            function watchcolourpickertextbox(event) {
-                hexc = event.target.value;
-                colourpickerdiv.style.background = event.target.value;
-                colourpicker.value = event.target.value;
+                function watchcolourpickertextbox(event) {
+                    hexcolour.colour = event.target.value;
+                    colourpickermain();
+                }
+            //rgb inputs 
+                function watchrgbinputs(event) {
+                    rgbint.red = parseInt(inputrgb.red.value);
+                    rgbint.green = parseInt(inputrgb.green.value);
+                    rgbint.blue = parseInt(inputrgb.blue.value);
+                    convertrgbhex();
+                    combinehex();
+                    colourpickermain();
+                }
+        //main function to simplify other functions
+            function colourpickermain() {
                 splithex();
                 convertrgb();
-                updatetextboxes()
+                if ( coloursanitycheck() ) {
+                    colourpickerdiv.style.background = hexcolour.colour;
+                    colourpicker.value = hexcolour.colour;
+                    updatetextboxes()
+                    colourpickerinfooutput.innerHTML='VALID COlOUR'
+                    updateotherinputs();
+                    updatecsstextboxes();
+                }
             }
+        //function to update other inputs
+        function updateotherinputs() {
+            colourpickertextbox.value = hexcolour.colour;
+            colourpicker.value = hexcolour.colour;
+            inputrgb.red.value = rgbint.red;
+            inputrgb.green.value = rgbint.green;
+            inputrgb.blue.value = rgbint.blue;
+        }
+        //function to update css textboxes 
+            function updatecsstextboxes() {
+                csstextbox.hex.innerHTML = 'color: '+ hexcolour.colour +';'
+                csstextbox.rgb.innerHTML = 'color: rgb('+rgbint.red + ', ' + rgbint.green + ', ' + rgbint.blue+');'
+                csstextbox.rgba.innerHTML = 'color: rgba('+rgbint.red + ', ' + rgbint.green + ', ' + rgbint.blue+' ,0);'
+            }
+        //function to check if valid
+            function coloursanitycheck() {
+                let check = true;
+                if (rgbint.red > 255 || isNaN(rgbint.red)) {
+                    check = false;
+                    colourpickerinfooutput.innerHTML='INVALID COlOUR'
+                }
+                if (rgbint.blue > 255 || isNaN(rgbint.blue)) {
+                    check = false;
+                    colourpickerinfooutput.innerHTML='INVALID COlOUR'
+                }
+                if (rgbint.green > 255 || isNaN(rgbint.green)) {
+                    check = false;
+                    colourpickerinfooutput.innerHTML='INVALID COlOUR'
+                }
+                return check;
+            } 
 
         //function for updating on page load
             function pageloadcolourpicker() {
-                hexc = document.querySelector("#colourpicker").value;
-                colourpickerdiv.style.background = document.querySelector("#colourpicker").value;
-                splithex();
-                convertrgb();
-                updatetextboxes()
+                hexcolour.colour = document.querySelector("#colourpicker").value;
+                colourpickermain();
             }
         //function to update textboxes
-        function updatetextboxes() {
-            //hex
-                hextextbox.innerHTML = hexc;
-                hexredtext.innerHTML = hexred
-                hexgreentext.innerHTML = hexgreen;
-                hexblue.innerHTML = hex3;
-            //rgb
-                intrtext.innerHTML = redint;
-                intbtext.innerHTML = blueint;
-                intgtext.innerHTML = greenint;
-        }
-        pageloadcolourpicker();
-
+            function updatetextboxes() {
+                //hex
+                    hextextbox.innerHTML = hexcolour.colour;
+                    hextb.red.innerHTML = hexcolour.red
+                    hextb.green.innerHTML = hexcolour.green;
+                    hextb.blue.innerHTML = hexcolour.blue;
+                //rgb
+                    rgbtb.red.innerHTML = rgbint.red;
+                    rgbtb.blue.innerHTML = rgbint.blue;
+                    rgbtb.green.innerHTML = rgbint.green;
+            }
+        
         //functions for converting to rgb
             //split hex code into 3     
-            function splithex() {
-                let hex = String(hexc);
-                hexred = hex[1] + hex[2];
-                hexgreen = hex[3] + hex[4];
-                hex3 = hex[5] + hex[6];
-            }
+                function splithex() {
+                    let hex = String(hexcolour.colour);
+                    hexcolour.red = hex[1] + hex[2];
+                    hexcolour.green = hex[3] + hex[4];
+                    hexcolour.blue = hex[5] + hex[6];
+                }
+
+                function combinehex() {
+                    let hex = String(hexcolour.red + hexcolour.green + hexcolour.blue);
+                    hexcolour.colour = '#' + hex;
+                }
+            
             //convert hex to int RGB
-            function convertrgb() {
-                redint = parseInt(hexred, 16);
-                blueint = parseInt(hex3, 16);
-                greenint = parseInt(hexgreen, 16);
-            }
+                function convertrgb() {
+                    rgbint.red = parseInt(hexcolour.red, 16);
+                    rgbint.blue = parseInt(hexcolour.blue, 16);
+                    rgbint.green = parseInt(hexcolour.green, 16);
+                }
+
+            //convert rgb to hex
+                function convertrgbhex() {
+                    hexcolour.red = lengthcheck( rgbint.red.toString(16) );
+                    hexcolour.blue = lengthcheck( rgbint.blue.toString(16) );
+                    hexcolour.green = lengthcheck( rgbint.green.toString(16) );     
+                }
+            //function to check for less then 2 chars and add if necessary
+                function lengthcheck(input) {
+                    if (input.toString().length < 2) {
+                        input = '0' + input;
+                    }
+                    return String(input);
+                }
+            pageloadcolourpicker(); 
     </script>
 </html>
