@@ -1,3 +1,17 @@
+h1, h2, h3, h4, p, li {
+    text-align: center;
+    font-family: UnnamedDOSFontIV;
+}
+a {
+    text-decoration: none;
+    font-family: UnnamedDOSFontIV;
+}
+a.link:hover::before, a.link:active::before{
+    content: ">  ";
+}
+a.link:hover::after, a.link:active::after {
+    content: "  <";
+}
 .col {
     display: flex;
     flex-direction: column;
@@ -33,20 +47,6 @@ img.img-box {
 }
 ul.menu {
     list-style: none;
-}
-h1, h2, h3, h4, p, li {
-    text-align: center;
-    font-family: UnnamedDOSFontIV;
-}
-a {
-    text-decoration: none;
-    font-family: UnnamedDOSFontIV;
-}
-a.link:hover::before, a.link:active::before{
-    content: ">  ";
-}
-a.link:hover::after, a.link:active::after {
-    content: "  <";
 }
 h4.border.border.border-bottom {
     border-bottom: 1px solid;
