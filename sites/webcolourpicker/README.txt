@@ -1,7 +1,7 @@
 ----==== Colour Picker ====----
 Simple html page that has a colour picker
 
-Live Page : https://lostjarred.github.io/sites/webcolourpicker/index.html
+Live Page : https://lostjarred.github.io/sites/webcolourpicker/
 
 --== Credits ==--
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color

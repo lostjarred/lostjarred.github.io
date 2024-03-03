@@ -1,0 +1,66 @@
+body {
+    background-color: #282828;
+}
+p, h1, h2, h3 {
+    color: #FFCC00;
+    font-family: UnnamedDOSFontIV;
+}
+input {
+    color: #282828;
+    font-family: UnnamedDOSFontIV;
+    text-align: center;
+    background-color: #FFCC00;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+}
+.col {
+    display: flex;
+    flex-direction: column;
+}
+.textbox {
+    text-align: center;
+    border: 1px solid #FFB000;
+    padding: 5px;
+    color: #282828;
+    background-color: #FFCC00;
+}
+.border-top {
+    border-top: 2px dashed #FFB000;
+}
+.border-bottom {
+    border-bottom: 2px dashed #FFB000;
+}
+#header {
+    color: rgba(255, 176, 0);
+    text-align: center;
+}
+#maindiv{
+    border-left: 2px solid #FFB000; 
+    border-right: 2px solid #FFB000; 
+}
+#colourpickerdiv{
+    padding: 8%; 
+    border: 2px solid #FFB000; 
+}
+
+@font-face {
+    font-family: 'UnnamedDOSFontIV';
+    src: url('./font/UnnamedDOSFontIV.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@media screen and (min-width: 900px) {
+    #maindiv{
+        margin-left: 5%; 
+        margin-right: 5%
+    }
+    #colourpickerdiv{
+        margin: 2%;
+    }
+    .row {
+        margin-left: 1%;
+    }
+}

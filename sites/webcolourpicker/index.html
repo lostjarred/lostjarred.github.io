@@ -2,80 +2,7 @@
 <html>
     <head>
         <title>Colour Picker</title>
-        <style>
-            .row {
-                display: flex;
-                flex-direction: row;
-            }
-            .col {
-                display: flex;
-                flex-direction: column;
-            }
-            #header {
-                color: rgba(255, 176, 0, 0.1);
-                text-align: center;
-                animation-name: FADEIN;
-                animation-duration: 800ms;
-                animation-iteration-count: infinite;
-                animation-direction: alternate;
-            }
-            .textbox {
-                background-color: rgba(204, 139, 0, 0.5);
-                text-align: center;
-                border: 1px solid #FFB000;
-            }
-            .border-top {
-                border-top: 2px dashed #FFB000;
-            }
-            .border-bottom {
-                border-bottom: 2px dashed #FFB000;
-            }
-            #maindiv{
-                border-left: 2px dashed #FFB000; 
-                border-right: 2px dashed #FFB000; 
-                background-color: rgba(204, 139, 0, 0.5)
-            }
-            #colourpickerdiv{
-                padding: 8%; 
-                border: 2px solid #FFB000; 
-            }
-            body {
-                background-color: #282828;
-            }
-            p, h1, h2, h3 {
-                color: #FFCC00;
-                font-family: UnnamedDOSFontIV;
-            }
-            input {
-                color: #FFCC00;
-                font-family: UnnamedDOSFontIV;
-                background-color: rgba(204, 139, 0, 0.5);
-                text-align: center;
-            }
-            @keyframes FADEIN {
-                0% {color: rgba(255, 176, 0, 0.1);}
-                100% {color: rgba(255, 176, 0, 1);}
-            }
-            @font-face {
-                font-family: 'UnnamedDOSFontIV';
-                src: url('./font/UnnamedDOSFontIV.ttf') format('truetype');
-                font-weight: 500;
-                font-style: normal;
-                font-display: swap;
-            }
-            @media screen and (min-width: 900px) {
-                #maindiv{
-                    margin-left: 5%; 
-                    margin-right: 5%
-                }
-                #colourpickerdiv{
-                    margin: 2%;
-                }
-                .row {
-                    margin-left: 1%;
-                }
-            }
-        </style>
+        <link href="./site.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
     </head>
     <body>
@@ -266,7 +193,7 @@
             function updatecsstextboxes() {
                 csstextbox.hex.innerHTML = 'color: '+ hexcolour.colour +';'
                 csstextbox.rgb.innerHTML = 'color: rgb('+rgbint.red + ', ' + rgbint.green + ', ' + rgbint.blue+');'
-                csstextbox.rgba.innerHTML = 'color: rgba('+rgbint.red + ', ' + rgbint.green + ', ' + rgbint.blue+' ,0);'
+                csstextbox.rgba.innerHTML = 'color: rgba('+rgbint.red + ', ' + rgbint.green + ', ' + rgbint.blue+', 0);'
             }
         //function to check if valid
             function coloursanitycheck() {
