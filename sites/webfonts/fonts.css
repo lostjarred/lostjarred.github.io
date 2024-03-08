@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'UnnamedDOSFontIV';
+    src: url('fonts/unnameddosfontiv/UnnamedDOSFontIV.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Operation Napalm';
+    src: url('fonts/operationnapalm/OperationNapalmItalic-1GgAv.ttf') format('truetype');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Operation Napalm';
+    src: url('fonts/operationnapalm/OperationNapalm-nRBWO.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Hexcore';
+    src: url('fonts/hexcore/Hexcore-w1p4Z.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Novem';
+    src: url('fonts/novem/Novem-gx193.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'TeleSys';
+    src: url('fonts/telesys/TeleSys.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'DigitTech7';
+    src: url('fonts/digittech/DigitTech7-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'DigitTech9';
+    src: url('fonts/digittech/DigitTech9-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'DigitTech14';
+    src: url('fonts/digittech/DigitTech14-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'DigitTech16';
+    src: url('fonts/digittech/DigitTech16-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'E1234';
+    src: url('fonts/e1234/E1234.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'MeleeSans';
+    src: url('fonts/meleesans/MeleeSans.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'koubit_001';
+    src: url('fonts/koubit001/koubit_001.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'PixelMordred';
+    src: url('fonts/pixelmordred/PixelMordred.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Ikaruga';
+    src: url('fonts/ikaruga/Ikaruga.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Fewture';
+    src: url('fonts/fewture/Fewture.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'LCDBlock';
+    src: url('fonts/lcdblock/LCDBlock.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Lunarpix';
+    src: url('fonts/Lunarpix/Lunarpix.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'GlassTTYVT220';
+    src: url('fonts/glassttyvt220/Glass_TTY_VT220.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Good Old DOS';
+    src: url('fonts/goodolddos/Good\ Old\ DOS.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Good Old DOS Outline';
+    src: url('fonts/goodolddos/Good\ Old\ DOS\ Outline.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Good Old DOS 3D';
+    src: url('fonts/goodolddos/Good\ Old\ DOS\ 3D.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Good Old DOS Smooth';
+    src: url('fonts/goodolddos/Good\ Old\ DOS\ Smooth.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Good Old DOS Distorted';
+    src: url('fonts/goodolddos/Good\ Old\ DOS\ Distorted.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Failed Attempt';
+    src: url('fonts/failedattempt/Failed\ Attempt.otf') format('opentype');
+}
