@@ -12,6 +12,9 @@ a.link:hover::before, a.link:active::before{
 a.link:hover::after, a.link:active::after {
     content: "  <";
 }
+a.header {
+    font-size: 1.8em;
+}
 .col {
     display: flex;
     flex-direction: column;
