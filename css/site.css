@@ -20,6 +20,11 @@ a.button {
     color: #000000;
     border: 2px solid #FFFFFF; 
 }
+a.button:hover, a.button:active{
+    background-color: #000000;
+    color: #FFFFFF;
+    border: 2px solid #000000; 
+}
 .col {
     display: flex;
     flex-direction: column;
