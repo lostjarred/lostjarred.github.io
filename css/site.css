@@ -15,6 +15,11 @@ a.link:hover::after, a.link:active::after {
 a.header {
     font-size: 1.8em;
 }
+a.button {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 2px solid #FFFFFF; 
+}
 .col {
     display: flex;
     flex-direction: column;
