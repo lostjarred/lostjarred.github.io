@@ -52,6 +52,9 @@ a.button:hover, a.button:active{
     border-left: 0px; 
     border-right: 0px;
 }
+img.pixelimg {
+    image-rendering: pixelated;
+}
 img.img-box {
     border: 1px solid black;
     object-fit: cover; 
