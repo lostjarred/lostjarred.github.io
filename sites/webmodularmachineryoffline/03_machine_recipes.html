@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Machine Recipes - Modular Machinery Offline Reference</title>
+        <link href="./css/site.css" rel="stylesheet">
+        <link href="./css/colouramber.css" rel="stylesheet">
+        <link href="./css/font.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    </head>
+    <body>
+        <div class="row border" id="main">
+            <div class="col border border-right menu">
+                <h2>MENU</h2>
+                <ul class="menu">
+                    <li> <a href=".\index.html" class="link">\Home</a> </li>
+                    <li><a href="./00_keynotes.html" class="link">\Important notes</a></li>
+                    <li><a href="./01_machine_format.html" class="link">\Machine format</a></li>
+                    <li><a href="./02_variables.html" class="link">\Variables</a></li>
+                    <li><a href="./03_machine_recipes.html" class="link">\Recipes</a></li>
+                    <li><a href="./04_recipe_adapters.html" class="link">\Recipe Adapters</a></li>
+                    <li><a href="./05_nbt_checking_setting.html" class="link">\NBT Checking & Setting</a></li>
+                    <li><a href="./06_recipe_sorting.html" class="link">\Recipe Sorting</a></li>
+                    <li><a href="./07_machine_format_postition_permutations.html" class="link">\Machine Format Position Permutations</a></li>
+                    <li><a href="./08_machine_colors.html" class="link">\Machine Colors</a></li>
+                    <li><a href="./09_structure_to_json_tool.html" class="link">\Structure To JSON Tool [Advanced]</a></li>
+                    <li><a href="./010_furnace_fuel_as_item_input.html" class="link">\Furnace Fuel as Item-Input</a></li>
+                    <li><a href="./011_craftweaker_recipe_definitions.html" class="link">\Crafttweaker Recipe definitions</a></li>
+                    <li><a href="./012_recipe_modifiers.html" class="link">\Recipe Modifiers</a></li>
+                    <li><a href="./100_ct_modular_machinery.html" class="link">\CT Modular Machinery</a></li>
+                    <li><a href="./101_ct_recipebuilder.html" class="link">\CT Recipe Builder</a></li>
+                    <li><a href="./102_ct_recipeprimer.html" class="link">\CT Recipe Primer</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <div class="col">
+                    <h1 class="border border-bottom">Custom Machines: Machine Recipes</h1>
+                </div>
+                <div class="row border border-bottom">
+                    <p>From <a href="https://github.com/HellFirePvP/ModularMachinery/wiki/4.-Custom-Machines:-Machine-Recipes">https://github.com/HellFirePvP/ModularMachinery/wiki/4.-Custom-Machines:-Machine-Recipes</a> </p>
+                </div>
+                <div class="col">
+                    <p>Now that you've set up one machine or multiple with potential input/output options for items/fluids/energy, 
+                        you can now define recipes for those machines that the machine will then perform if the input items/fluids/energy necessary are present and space for output items/fluids/energy is available.</p>
+                    <p>This system allows for any kind of potential recipes you might want the machine to perform. 
+                        This can range from some sort of furnace that takes items and produces a set amount of 'energy' per tick, 
+                        up to something like a Fusion Reactor that takes several fluids as input and outputs another fluid and a lot of energy per tick. 
+                        It can also centrifuge items out of fluids for the cost of a set amount of energy per tick and so on and so forth. 
+                        There is no bounds to this kind of definition.</p>
+                    <p>However, there are certain things that have to be set so the recipe can function properly. 
+                        Let's first look at the format and then at a few examples:</p>
+                    <div class="code">
+                        <pre class="code">{
+    //The machine's registry name
+    //This is defined in the machine's json as 'registryname'
+    "machine": "centrifuge",
+                        
+    //Each recipe has to have a unique registry name
+    //That way the mod can safely read and write
+    //recipes from NBT.
+    "registryName": "centrifuge_lava_generic",
+                        
+    //The amount of time in ticks this recipe takes
+    "recipeTime": 20,
+                        
+    //The actual parts that are required for this recipe
+    "requirements": [ //An array of said requirements
+        {
+            //The Component-Type that's involved
+            //Available types: energy, fluid, item
+            "type": "energy",
+                        
+            //The type of input/output interaction
+            //Available io-types: input, output
+            "io-type": "input",
+                        
+            //The component-type 'energy' expects this
+            //entry to determine how much energy per
+            //tick is outputted or consumed
+            "energyPerTick": 10
+        },
+        {
+            "type": "item",
+            "io-type": "output",
+                        
+            //The item-definition that defines
+            //which item is supposed to be produced
+            //or consumed by this recipe
+            "item": "minecraft:gold_nugget",
+                        
+            //For 'item' and 'fluid' component-types
+            //the chance-entry exists. This lets you
+            //set the chance a specific item or
+            //fluid is consumed or produced!
+            //Doesn't need to be defined! Will be 100% if not defined!
+            "chance": 0.01
+        },
+        {
+            "type": "item",
+            "io-type": "output",
+            "item": "minecraft:fire_charge",
+            "chance": 0.2
+        },
+        {
+            "type": "fluid",
+            "io-type": "input",
+                        
+            //The fluid-definition defines which
+            //fluid gets used in the input or
+            //produced in the output
+            "fluid": "lava",
+                        
+            //The amount of the fluid that gets
+            //consumed or produced in mB
+            //1000 mB (milliBucket) = 1 B (Bucket)
+            "amount": 10,
+                        
+            //This also can have a chance tag
+            //to define the chance that the fluid
+            //is consumed or produced at all
+            "chance": 0.8
+        }
+    ]
+}</pre>
+                    </div>
+                    <p>This defines a recipe for the 'centrifuge' which runs for 20 ticks - so 1 second ideally - uses up 10 'energy' per tick, 
+                        so a total of 200 'energy' (RF, FE, ...), uses up 10mB of lava with a chance of 80% to produce a gold nugget with a chance of 1% or a fire charge with the chance of 20%.</p>
+                    <p>Also: instead of defining only 1 machine in 'machine' you can also define an array of machines in 'machine' and the recipe will be added to all of those machines. Example:</p>
+                    <div class="code">
+                        <pre class="code">
+"machine": [
+    "centrifuge",
+    "some_other_machine",
+    "another_machine"
+]</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

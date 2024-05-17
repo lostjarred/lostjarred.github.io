@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Recipe Primer - Crafttweaker - Modular Machinery Offline Reference</title>
+        <link href="./css/site.css" rel="stylesheet">
+        <link href="./css/colouramber.css" rel="stylesheet">
+        <link href="./css/font.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    </head>
+    <body>
+        <div class="row border" id="main">
+            <div class="col border border-right menu">
+                <h2>MENU</h2>
+                <ul class="menu">
+                    <li> <a href=".\index.html" class="link">\Home</a> </li>
+                    <li><a href="./00_keynotes.html" class="link">\Important notes</a></li>
+                    <li><a href="./01_machine_format.html" class="link">\Machine format</a></li>
+                    <li><a href="./02_variables.html" class="link">\Variables</a></li>
+                    <li><a href="./03_machine_recipes.html" class="link">\Recipes</a></li>
+                    <li><a href="./04_recipe_adapters.html" class="link">\Recipe Adapters</a></li>
+                    <li><a href="./05_nbt_checking_setting.html" class="link">\NBT Checking & Setting</a></li>
+                    <li><a href="./06_recipe_sorting.html" class="link">\Recipe Sorting</a></li>
+                    <li><a href="./07_machine_format_postition_permutations.html" class="link">\Machine Format Position Permutations</a></li>
+                    <li><a href="./08_machine_colors.html" class="link">\Machine Colors</a></li>
+                    <li><a href="./09_structure_to_json_tool.html" class="link">\Structure To JSON Tool [Advanced]</a></li>
+                    <li><a href="./010_furnace_fuel_as_item_input.html" class="link">\Furnace Fuel as Item-Input</a></li>
+                    <li><a href="./011_craftweaker_recipe_definitions.html" class="link">\Crafttweaker Recipe definitions</a></li>
+                    <li><a href="./012_recipe_modifiers.html" class="link">\Recipe Modifiers</a></li>
+                    <li><a href="./100_ct_modular_machinery.html" class="link">\CT Modular Machinery</a></li>
+                    <li><a href="./101_ct_recipebuilder.html" class="link">\CT Recipe Builder</a></li>
+                    <li><a href="./102_ct_recipeprimer.html" class="link">\CT Recipe Primer</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <div class="col">
+                    <h1 class="border border-bottom">RecipePrimer</h1>
+                </div>
+                <div class="row border border-bottom">
+                    <p>From <a href="https://docs.blamejared.com/1.12/en/Mods/ModularMachinery/Recipes/RecipePrimer">https://docs.blamejared.com/1.12/en/Mods/ModularMachinery/Recipes/RecipePrimer</a> </p>
+                </div>
+                <div class="col">
+                    <p>A RecipePrimer Object is the actual recipe. 
+                        You can get such an object from the <a href="101_ct_recipebuilder.html">RecipeBuilder</a> and use its methods to actually give the recipe ins and outs and stuff.
+                    </p>
+                    <h3>Importing the package</h3>
+                    <p>It might be required for you to import the package if you encounter any issues (like casting an <a href="https://docs.blamejared.com/1.12/en/AdvancedFunctions/Arrays_and_Loops">Array</a>), 
+                            so better be safe than sorry and add the import.
+                    </p>
+                    <p><span class="code">import mods.modularmachinery.RecipePrimer;</span></p>
+                    <h3>ZenMethods</h3>
+                    <p>Each of these methods does two things: First, it modifies the object, then it returns the object itself (as another RecipePrimer).</p>
+                    <p>This means you can either call each method on its own, or make one call where you append each pieces of code (example below).</p>
+                    <h4>Setting the chance</h4>
+                    <div class="code">
+                        <h4 class="code">ZenScript</h4>
+                        <p class="code">setChance(float chance);</p>
+                    </div>
+                    <h4>Adding Energy and fuel requirements</h4>
+                    <div class="code">
+                        <h4 class="code">ZenScript</h4>
+                        <p class="code">addEnergyPerTickInput(int perTick);</p>
+                        <p class="code">addEnergyPerTickOutput(int perTick);</p>
+                        <p class="code">//Typo? This is what the sourcecode sais, if it doesn't work try Input</p>
+                        <p class="code">addFuelItemInout(int requiredTotalBurnTime);</p>
+                    </div>
+                    <h4>Adding inputs</h4>
+                    <p>You can add <a href="https://docs.blamejared.com/1.12/en/Vanilla/Items/IItemStack">IItemStacks</a>, <a href="https://docs.blamejared.com/1.12/en/Vanilla/OreDict/IOreDictEntry">IOreDictEntries</a> or <a href="https://docs.blamejared.com/1.12/en/Vanilla/Liquids/ILiquidStack">ILiquidStacks</a> as input.</p>
+                    <div class="code">
+                        <h4 class="code">ZenScript</h4>
+                        <p class="code">addItemInput(IItemStack stack);</p>
+                        <p class="code">addItemInput(IOreDictEntry oreDict);</p>
+                        <p class="code">addItemInput(IOreDictEntry oreDict, int amount);</p>
+                        <p class="code">addFluidInput(ILiquidStack stack);</p>
+                    </div>
+                    <h4>Adding outputs</h4>
+                    <p>You can add <a href="https://docs.blamejared.com/1.12/en/Vanilla/Items/IItemStack">IItemStacks</a>, <a href="https://docs.blamejared.com/1.12/en/Vanilla/OreDict/IOreDictEntry">IOreDictEntries</a> or <a href="https://docs.blamejared.com/1.12/en/Vanilla/Liquids/ILiquidStack">ILiquidStacks</a> as output.</p>
+                    <div class="code">
+                        <h4 class="code">ZenScript</h4>
+                        <p class="code">addItemOutput(IItemStack stack);</p>
+                        <p class="code">addItemOutput(IOreDictEntry oreDict);</p>
+                        <p class="code">addItemOutput(IOreDictEntry oreDict, int amount);</p>
+                        <p class="code">addFluidOutput(ILiquidStack stack);</p>
+                    </div>
+                    <h4>Building the recipe</h4>
+                    <p>After you have done your changes above, you need to build the recipe so that it will actually do something.</p>
+                    <div class="code">
+                        <h4 class="code">ZenScript</h4>
+                        <p class="code">build();</p>
+                    </div>
+                    <h4>Example</h4>
+                    <div class="code">
+                        <h4 class="code">ZenScript</h5>
+                        <p class="code">val reci = mods.modularmachinery.RecipeBuilder.newBuilder("recipeRegistryName", "associatedMachineRegistryName", 1000, 0);</p>
+                        <p class="code">reci.addEnergyPerTickInput(100);</p>
+                        <p class="code">reci.addItemInput(&ltore:ingotIron&gt);</p>
+                        <p class="code">reci.addItemOutput(&ltminecraft:gold_ingot&gt);</p>
+                        <p class="code">reci.build();</p>
+                        <p class="code">val rec = mods.modularmachinery.RecipeBuilder.newBuilder("anotherRecipeRegistryName", "associatedMachineRegistryName", 1000, 0);</p>
+                        <p class="code">rec.addEnergyPerTickInput(100).addFluidInput(&ltliquid:water&gt * 1000).addFluidInput(&ltliquid:lava&gt * 1000).addItemOutput(&ltminecraft:obsidian&gt * 2).build();</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

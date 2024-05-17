@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Crafttweaker Recipe definitions - Modular Machinery Offline Reference</title>
+        <link href="./css/site.css" rel="stylesheet">
+        <link href="./css/colouramber.css" rel="stylesheet">
+        <link href="./css/font.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    </head>
+    <body>
+        <div class="row border" id="main">
+            <div class="col border border-right menu">
+                <h2>MENU</h2>
+                <ul class="menu">
+                    <li> <a href=".\index.html" class="link">\Home</a> </li>
+                    <li><a href="./00_keynotes.html" class="link">\Important notes</a></li>
+                    <li><a href="./01_machine_format.html" class="link">\Machine format</a></li>
+                    <li><a href="./02_variables.html" class="link">\Variables</a></li>
+                    <li><a href="./03_machine_recipes.html" class="link">\Recipes</a></li>
+                    <li><a href="./04_recipe_adapters.html" class="link">\Recipe Adapters</a></li>
+                    <li><a href="./05_nbt_checking_setting.html" class="link">\NBT Checking & Setting</a></li>
+                    <li><a href="./06_recipe_sorting.html" class="link">\Recipe Sorting</a></li>
+                    <li><a href="./07_machine_format_postition_permutations.html" class="link">\Machine Format Position Permutations</a></li>
+                    <li><a href="./08_machine_colors.html" class="link">\Machine Colors</a></li>
+                    <li><a href="./09_structure_to_json_tool.html" class="link">\Structure To JSON Tool [Advanced]</a></li>
+                    <li><a href="./010_furnace_fuel_as_item_input.html" class="link">\Furnace Fuel as Item-Input</a></li>
+                    <li><a href="./011_craftweaker_recipe_definitions.html" class="link">\Crafttweaker Recipe definitions</a></li>
+                    <li><a href="./012_recipe_modifiers.html" class="link">\Recipe Modifiers</a></li>
+                    <li><a href="./100_ct_modular_machinery.html" class="link">\CT Modular Machinery</a></li>
+                    <li><a href="./101_ct_recipebuilder.html" class="link">\CT Recipe Builder</a></li>
+                    <li><a href="./102_ct_recipeprimer.html" class="link">\CT Recipe Primer</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <div class="col">
+                    <h1 class="border border-bottom">Crafttweaker Recipe definitions [Advanced]</h1>
+                </div>
+                <div class="row border border-bottom">
+                    <p>From <a href="https://github.com/HellFirePvP/ModularMachinery/wiki/12.-Crafttweaker-Recipe-definitions-%5BAdvanced%5D">https://github.com/HellFirePvP/ModularMachinery/wiki/12.-Crafttweaker-Recipe-definitions-%5BAdvanced%5D</a> </p>
+                </div>
+                <div class="col">
+                    <p>So while writing up recipes in JSON is the 'default' way of adding recipes to machines in ModularMachinery, 
+                        starting from Version 1.8.1 and newer, 
+                        one can add recipes to machines using Crafttweaker. 
+                        In the end, the same goals can be achieved, 
+                        except some features, like defining matching & display NBT-tags for item requirements and the option to define range-checks in such checks (so it would 'pass' the test if some Integer value is >= 1000 or something), 
+                        are not available.
+                    </p>
+                    <p>Starting the recipe-add process can be done with <a href="https://github.com/HellFirePvP/ModularMachinery/blob/master/src/main/java/hellfirepvp/modularmachinery/common/integration/crafttweaker/RecipeBuilder.java">the RecipeBuilder class</a>: 
+                        <span class="code">mods.modularmachinery.RecipeBuilder.newBuilder("recipeName", "machineName", 100) ...</span>
+                    </p>
+                    <p>This returns a RecipePrimer object where further operations can be done on the recipe, 
+                        such as adding required inputs and adding outputs. A list of available methods can be found in <a href="https://github.com/HellFirePvP/ModularMachinery/blob/master/src/main/java/hellfirepvp/modularmachinery/common/integration/crafttweaker/RecipePrimer.java">the RecipePrimer class</a>.</p>
+                    <p>For a more detailed explanantion on this, please also check <a href="https://docs.blamejared.com/1.12/en/Mods/ModularMachinery/ModularMachinery">the Crafttweaker documentation on ModularMachinery</a>.</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
