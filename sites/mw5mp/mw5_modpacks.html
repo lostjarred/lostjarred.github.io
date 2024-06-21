@@ -15,7 +15,10 @@
             }
             .border {
                 border-width: 2px;
-                border-style: solid;
+                border-right-style: solid;
+                border-left-style: solid;
+                border-top-style: dashed;
+                border-bottom-style: dashed;
                 border-color: #FFB000;
             }
             .border.bottom {
@@ -39,6 +42,20 @@
             a:hover,  a:active{
                 color: #eeff00;
             }
+            .white {
+                color: #FFFFFF;
+                border-color: #FFFFFF;
+            }
+            a.white:hover, a.white:active {
+                color: #999999;
+            }
+            .red {
+                color: #ff2100;
+                border-color: #ff2100;
+            }
+            a.red:hover, a.red:active {
+                color: #ff5940;
+            }
         </style>
     </head>
     <body>
@@ -48,59 +65,59 @@
                     <h1>MechWarrior 5 Modpacks</h1>
                 </div>
                 <div class="col" style="margin-left: 1%;">
-                    <h2 class="border bottom">RiPpEr253</h2>
+                    <h2 class="border bottom white">RiPpEr253</h2>
                     <div class="col" style="margin-left: 1%;">
-                        <ul>
-                            <li>BetterCrates --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/603">https://www.nexusmods.com/mechwarrior5mercenaries/mods/603</a></li>
-                            <li>Cockpit Glass --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/256">https://www.nexusmods.com/mechwarrior5mercenaries/mods/256</a></li>
-                            <li>Coop Unlocked --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/706">https://www.nexusmods.com/mechwarrior5mercenaries/mods/706</a></li>
-                            <li>Lore-based Mech Variants YAML-Edition --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/493">https://www.nexusmods.com/mechwarrior5mercenaries/mods/493</a></li>
-                            <li>Mod Options --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/537">https://www.nexusmods.com/mechwarrior5mercenaries/mods/537</a></li>
-                            <li>TTrulez_AiMod2_v9_2 --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/269">https://www.nexusmods.com/mechwarrior5mercenaries/mods/269</a></li>
-                            <li>Unofficial DLC6 Quickfix for Co-op Unlocked --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/1084">https://www.nexusmods.com/mechwarrior5mercenaries/mods/1084</a></li>
-                            <li>YetAnotherMechlab --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/459">https://www.nexusmods.com/mechwarrior5mercenaries/mods/459</a></li>
-                            <li>YetAnotherWeapon --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/165">https://www.nexusmods.com/mechwarrior5mercenaries/mods/165</a></li>
-                            <li>Yet Another Clan Mech --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/760">https://www.nexusmods.com/mechwarrior5mercenaries/mods/760</a></li>
-                            <li>Yet Another Equipment Collection --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/592">https://www.nexusmods.com/mechwarrior5mercenaries/mods/592</a></li>
-                            <li>Yet Another Special Variant --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/649">https://www.nexusmods.com/mechwarrior5mercenaries/mods/649</a></li>
-                            <li>Yet Another Weapon Clan -- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/241"></a>https://www.nexusmods.com/mechwarrior5mercenaries/mods/241</li>
-                        </ul>
+                        <ol>
+                            <li class="white">BetterCrates --- <a class="white" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/603">https://www.nexusmods.com/mechwarrior5mercenaries/mods/603</a></li>
+                            <li class="white">Cockpit Glass --- <a class="white" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/256">https://www.nexusmods.com/mechwarrior5mercenaries/mods/256</a></li>
+                            <li class="white">Coop Unlocked --- <a class="white" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/706">https://www.nexusmods.com/mechwarrior5mercenaries/mods/706</a></li>
+                            <li class="white">Lore-based Mech Variants YAML-Edition --- <a class="white" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/493">https://www.nexusmods.com/mechwarrior5mercenaries/mods/493</a></li>
+                            <li class="white">Mod Options --- <a class="white" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/537">https://www.nexusmods.com/mechwarrior5mercenaries/mods/537</a></li>
+                            <li class="white">TTrulez_AiMod2_v9_2 --- <a class="white" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/269">https://www.nexusmods.com/mechwarrior5mercenaries/mods/269</a></li>
+                            <li class="white">Unofficial DLC6 Quickfix for Co-op Unlocked --- <a class="white" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/1084">https://www.nexusmods.com/mechwarrior5mercenaries/mods/1084</a></li>
+                            <li class="white">YetAnotherMechlab --- <a class="white" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/459">https://www.nexusmods.com/mechwarrior5mercenaries/mods/459</a></li>
+                            <li class="white">YetAnotherWeapon --- <a class="white" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/165">https://www.nexusmods.com/mechwarrior5mercenaries/mods/165</a></li>
+                            <li class="white">Yet Another Clan Mech --- <a class="white" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/760">https://www.nexusmods.com/mechwarrior5mercenaries/mods/760</a></li>
+                            <li class="white">Yet Another Equipment Collection --- <a class="white" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/592">https://www.nexusmods.com/mechwarrior5mercenaries/mods/592</a></li>
+                            <li class="white">Yet Another Special Variant --- <a class="white" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/649">https://www.nexusmods.com/mechwarrior5mercenaries/mods/649</a></li>
+                            <li class="white">Yet Another Weapon Clan -- <a class="white" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/241">https://www.nexusmods.com/mechwarrior5mercenaries/mods/241</a></li>
+                        </ol>
                     </div>
                 </div>
                 <div class="col" style="margin-left: 1%;">
-                    <h2 class="border bottom">AussieGrif</h2>
+                    <h2 class="border bottom red">AussieGrif</h2>
                     <div class="col" style="margin-left: 1%;">
-                        <ul>
-                            <li>BetterCrates --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/603">https://www.nexusmods.com/mechwarrior5mercenaries/mods/603</a></li>
-                            <li>BetterMarkets-DLC06 --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/175">https://www.nexusmods.com/mechwarrior5mercenaries/mods/175</a></li>
-                            <li>Cockpit Glass --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/256">https://www.nexusmods.com/mechwarrior5mercenaries/mods/256</a></li>
-                            <li>Coop Unlocked --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/706">https://www.nexusmods.com/mechwarrior5mercenaries/mods/706</a></li>
-                            <li>Exotic IS Mechs --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/955">https://www.nexusmods.com/mechwarrior5mercenaries/mods/955</a></li>
-                            <li>Lore-based Mech Variants YAML-Edition --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/493">https://www.nexusmods.com/mechwarrior5mercenaries/mods/493</a></li>
-                            <li>Mod Options --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/537">https://www.nexusmods.com/mechwarrior5mercenaries/mods/537</a></li>
-                            <li>PurchaseSalvage --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/543">https://www.nexusmods.com/mechwarrior5mercenaries/mods/543</a></li>
-                            <li>Repair Bays --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/485">https://www.nexusmods.com/mechwarrior5mercenaries/mods/485</a></li>
-                            <li>The Known Universe --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/786">https://www.nexusmods.com/mechwarrior5mercenaries/mods/786</a></li>
-                            <li>TTrulez_AiMod2_v9_2 --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/269">https://www.nexusmods.com/mechwarrior5mercenaries/mods/269</a></li>
-                            <li>Unofficial DLC6 Quickfix for Co-op Unlocked --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/1084">https://www.nexusmods.com/mechwarrior5mercenaries/mods/1084</a></li>
-                            <li>Wasp-Stinger YAML --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/867">https://www.nexusmods.com/mechwarrior5mercenaries/mods/867</a></li>
-                            <li>Wyvern YAML --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/869">https://www.nexusmods.com/mechwarrior5mercenaries/mods/869</a></li>
-                            <li>YetAnotherMechlab --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/459">https://www.nexusmods.com/mechwarrior5mercenaries/mods/459</a></li>
-                            <li>YetAnotherWeapon --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/165">https://www.nexusmods.com/mechwarrior5mercenaries/mods/165</a></li>
-                            <li>YetAnotherWeaponClan --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/241">https://www.nexusmods.com/mechwarrior5mercenaries/mods/241</a></li>
-                        </ul>
+                        <ol>
+                            <li class="red">BetterCrates --- <a class="red" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/603">https://www.nexusmods.com/mechwarrior5mercenaries/mods/603</a></li>
+                            <li class="red">BetterMarkets-DLC06 --- <a class="red" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/175">https://www.nexusmods.com/mechwarrior5mercenaries/mods/175</a></li>
+                            <li class="red">Cockpit Glass --- <a class="red" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/256">https://www.nexusmods.com/mechwarrior5mercenaries/mods/256</a></li>
+                            <li class="red">Coop Unlocked --- <a class="red" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/706">https://www.nexusmods.com/mechwarrior5mercenaries/mods/706</a></li>
+                            <li class="red">Exotic IS Mechs --- <a class="red" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/955">https://www.nexusmods.com/mechwarrior5mercenaries/mods/955</a></li>
+                            <li class="red">Lore-based Mech Variants YAML-Edition --- <a class="red" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/493">https://www.nexusmods.com/mechwarrior5mercenaries/mods/493</a></li>
+                            <li class="red">Mod Options --- <a class="red" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/537">https://www.nexusmods.com/mechwarrior5mercenaries/mods/537</a></li>
+                            <li class="red">PurchaseSalvage --- <a class="red" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/543">https://www.nexusmods.com/mechwarrior5mercenaries/mods/543</a></li>
+                            <li class="red">Repair Bays --- <a class="red" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/485">https://www.nexusmods.com/mechwarrior5mercenaries/mods/485</a></li>
+                            <li class="red">The Known Universe --- <a class="red" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/786">https://www.nexusmods.com/mechwarrior5mercenaries/mods/786</a></li>
+                            <li class="red">TTrulez_AiMod2_v9_2 --- <a class="red" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/269">https://www.nexusmods.com/mechwarrior5mercenaries/mods/269</a></li>
+                            <li class="red">Unofficial DLC6 Quickfix for Co-op Unlocked --- <a class="red" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/1084">https://www.nexusmods.com/mechwarrior5mercenaries/mods/1084</a></li>
+                            <li class="red">Wasp-Stinger YAML --- <a class="red" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/867">https://www.nexusmods.com/mechwarrior5mercenaries/mods/867</a></li>
+                            <li class="red">Wyvern YAML --- <a class="red" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/869">https://www.nexusmods.com/mechwarrior5mercenaries/mods/869</a></li>
+                            <li class="red">YetAnotherMechlab --- <a class="red" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/459">https://www.nexusmods.com/mechwarrior5mercenaries/mods/459</a></li>
+                            <li class="red">YetAnotherWeapon --- <a class="red" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/165">https://www.nexusmods.com/mechwarrior5mercenaries/mods/165</a></li>
+                            <li class="red">YetAnotherWeaponClan --- <a class="red" href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/241">https://www.nexusmods.com/mechwarrior5mercenaries/mods/241</a></li>
+                        </ol>
                     </div>
                 </div>
                 <div class="col" style="margin-left: 1%;">
                     <h2 class="border bottom">Lostone1993</h2>
                     <div class="col" style="margin-left: 1%;">
-                        <ul>
+                        <ol>
                             <li>BetterCrates --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/603">https://www.nexusmods.com/mechwarrior5mercenaries/mods/603</a></li>
                             <li>Coop Unlocked --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/706">https://www.nexusmods.com/mechwarrior5mercenaries/mods/706</a></li>
                             <li>Mod Options --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/537">https://www.nexusmods.com/mechwarrior5mercenaries/mods/537</a></li>
                             <li>Unofficial DLC6 Quickfix for Co-op Unlocked --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/1084">https://www.nexusmods.com/mechwarrior5mercenaries/mods/1084</a></li>
                             <li>YetAnotherMechlab --- <a href="https://www.nexusmods.com/mechwarrior5mercenaries/mods/459">https://www.nexusmods.com/mechwarrior5mercenaries/mods/459</a></li>
-                        </ul>
+                        </ol>
                     </div>
                 </div>
             </div>
