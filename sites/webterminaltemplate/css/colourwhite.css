@@ -1,0 +1,28 @@
+.border, img.img-box{
+    border-color: #ffffff;
+}
+body {
+    background-color: #282828;
+}
+h1, h2, h3, h4, p, a {
+     color: #ffffff;
+}
+a:hover,  a:active{
+    color: #ffffffbb;
+}
+a.button {
+    background-color: #ffffff;
+    color: #282828;
+    border: 2px solid #ffffff; 
+}
+a.button:hover, a.button:active{
+    background-color: #282828;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+div.code {
+    background-color: #ffffff;
+}
+pre.code {
+    color: #282828;
+}

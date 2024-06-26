@@ -1,0 +1,99 @@
+a {
+    text-decoration: none;
+}
+a.link:hover::before, a.link:active::before{
+    content: ">  ";
+}
+a.link:hover::after, a.link:active::after {
+    content: "  <";
+}
+a.header {
+    font-size: 1.8em;
+}
+a.button {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 2px solid #FFFFFF; 
+}
+a.button:hover, a.button:active{
+    background-color: #000000;
+    color: #FFFFFF;
+    border: 2px solid #000000; 
+}
+.col {
+    display: flex;
+    flex-direction: column;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+}
+.padding {
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+.center {
+    justify-content: center;
+}
+.border {
+    border: 2px solid black;
+    border-top: dashed;
+    border-bottom: dashed;
+}
+.border.border-bottom {
+    border-top: 0px; 
+    border-left: 0px; 
+    border-right: 0px;
+}
+.border.border-topbottom { 
+    border-left: 0px; 
+    border-right: 0px;
+}
+.border.border-right { 
+    border-top: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+}
+div.menu {
+    flex-shrink: 0; 
+    flex-basis: 10%;
+}
+img.pixel {
+    image-rendering: pixelated;
+}
+img.img-box {
+    border: 1px solid black;
+    object-fit: cover; 
+    height: 100%; 
+    width: 100%;
+}
+ul.menu {
+    list-style: none;
+    padding: 0;
+}
+h4.border.border.border-bottom {
+    border-bottom: 1px solid;
+}
+div.code {
+    border: 3px black solid;
+    margin: 1%;
+    background-color: #000000;
+}
+pre.code {
+    width: 100%; 
+    white-space: pre-wrap;
+    color: #FFFFFF;
+}
+@media screen and (min-width: 900px) {
+    #main {
+        margin-left: 10%; 
+        margin-right: 10%;
+    }
+    img.img-box {
+        border: 3px solid black;
+        object-fit: cover;
+        width: 40%; 
+    }
+}
