@@ -25,6 +25,7 @@
     menutext += '</ul>';
     menutext += '<h3>ASSUALT MECHS</h3>';
     menutext += '<ul class="menu">';
+    menutext += '<li> <a href="./am_awesome_buckshot.html" class="button">\AWESOME-AWS8Q-BUCKSHOT</a> </li>';
     menutext += '<li> <a href="./am_kingcrab_mg.html" class="button">\KINGCRAB-KGC-000-UNKOWN MG</a> </li>';
     menutext += '<li> <a href="./am_kingcrab_v2.html" class="button">\KINGCRAB-KGC-000-UNKOWN V2</a> </li>';
     menutext += '<li> <a href="./am_stalker_eye.html" class="button">\STALKER-STK-4N-EYE</a> </li>';
